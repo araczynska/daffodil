@@ -7,7 +7,7 @@ export const appRoutes: Routes = [
     redirectTo: '/button',
     pathMatch: 'full'
   },
-  { path: 'accordion', loadChildren: () => import('./accordion/accordion.module').then(m => m.AccordionModule) }, 
+  { path: 'accordion', loadChildren: () => import('./accordion/accordion.module').then(m => m.AccordionModule) },
   { path: 'button', loadChildren: () => import('./button/button.module').then(m => m.ButtonModule) },
   { path: 'callout', loadChildren: () => import('./callout/callout.module').then(m => m.CalloutModule) },
   { path: 'card', loadChildren: () => import('./card/card.module').then(m => m.CardModule) },
@@ -25,7 +25,8 @@ export const appRoutes: Routes = [
   { path: 'paginator', loadChildren: () => import('./paginator/paginator.module').then(m => m.PaginatorModule) },
   { path: 'progress-indicator', loadChildren: () => import('./progress-indicator/progress-indicator.module').then(m => m.ProgressIndicatorModule) },
   { path: 'qty-dropdown', loadChildren: () => import('./qty-dropdown/qty-dropdown.module').then(m => m.QtyDropdownModule) },
-  {path: 'sidebar', loadChildren: () => import('./sidebar/sidebar.module').then(m => m.SidebarModule)}
+  { path: 'radio', loadChildren: () => import('./radio/radio.module').then(m => m.RadioModule) },
+  { path: 'sidebar', loadChildren: () => import('./sidebar/sidebar.module').then(m => m.SidebarModule) }
 ]
 
 @NgModule({
