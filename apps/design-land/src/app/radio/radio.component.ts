@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'design-land-radio',
@@ -7,9 +8,14 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class RadioComponent implements OnInit {
 
+  radioGroup = new FormGroup({
+    race: new FormControl('Terran')
+  });
+
   constructor() { }
 
   ngOnInit() {
+    
   }
 
 }

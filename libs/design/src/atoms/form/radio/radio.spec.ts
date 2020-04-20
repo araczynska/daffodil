@@ -5,18 +5,16 @@ import { Component, DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
 @Component({
   template: `
-    <input type="radio" daff-radio/>
+    <daff-radio [checked]=true value="testValue"></daff-radio>
   `
 })
-class RadioWrapperComponent {
-  
-}
+class RadioWrapperComponent {}
 
 describe('DaffRadioComponent', () => {
   let wrapper: RadioWrapperComponent;
+  let component: DaffRadioComponent;
   let fixture: ComponentFixture<RadioWrapperComponent>;
   let de: DebugElement;
-
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -31,7 +29,8 @@ describe('DaffRadioComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(RadioWrapperComponent);
     wrapper = fixture.componentInstance;
-    de = fixture.debugElement.query(By.css('input[daff-radio]'));
+    de = fixture.debugElement.query(By.css('daff-radio'));
+    component = fixture.debugElement.query(By.css('daff-radio')).componentInstance;
     fixture.detectChanges();
   });
 
@@ -39,10 +38,26 @@ describe('DaffRadioComponent', () => {
     expect(wrapper).toBeTruthy();
   });
   describe('daff-radio', () => {
-    it('should add a class of daff-button to the host element', () => {
+    it('should add a class of focused to the host element', () => {
       expect(de.classes).toEqual(jasmine.objectContaining({
-        'daff-radio': true,
+        'focused': false,
       }));
     });
+    it('should add a class of disabled to the host element', () => {
+      expect(de.classes).toEqual(jasmine.objectContaining({
+        'disabled': false,
+      }));
+    });
+    describe('when given inputs', () => {
+      it('should be able to take in the boolean "checked" as an input', () => {
+        expect(component.checked).toEqual(true);
+      });
+      it('should be able to take in a value as an input', () => {
+        expect(component.value).toEqual("testValue");
+      });
+      it('should generate a unique id', () => {
+        expect(component.id).toContain('daff-radio-');
+      })
+    })
   })
 });

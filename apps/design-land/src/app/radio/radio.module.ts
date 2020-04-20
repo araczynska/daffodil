@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { RadioComponent } from './radio.component';
 import { DesignLandRadioRoutingModule } from './radio-routing.module';
 import { DaffRadioModule } from '@daffodil/design';
+import { ReactiveFormsModule } from '@angular/forms';
+import { DaffRadiosetModule } from 'libs/design/src';
 
 
 
@@ -16,7 +18,9 @@ import { DaffRadioModule } from '@daffodil/design';
   ],
   imports: [
     CommonModule,
-    DaffRadioModule
+    DaffRadioModule,
+    DaffRadiosetModule,
+    ReactiveFormsModule
   ]
 })
 export class RadioModule { }

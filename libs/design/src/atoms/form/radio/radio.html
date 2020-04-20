@@ -1,0 +1,11 @@
+<input type="radio" 
+[attr.checked]="checked ? '' : null" 
+[attr.id]="id" [attr.name]="name" 
+[attr.value]="value"
+[attr.disabled] = "disabled ? '' : null" 
+(change)="onChange(value)"
+(blur)="onInputBlur()"
+(focus)="onInputFocus()"/>
+<label [attr.for]="id">
+  <ng-content></ng-content>
+</label>
