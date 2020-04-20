@@ -53,7 +53,7 @@ describe('DaffRadioComponent', () => {
         expect(component.checked).toEqual(true);
       });
       it('should be able to take in a value as an input', () => {
-        expect(component.value).toEqual("testValue");
+        expect(component.value).toEqual('testValue');
       });
       it('should generate a unique id', () => {
         expect(component.id).toContain('daff-radio-');

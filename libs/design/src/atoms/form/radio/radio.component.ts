@@ -19,13 +19,13 @@ let daffRadioCount = 0;
 
 export class DaffRadioComponent implements ControlValueAccessor {
 
-  @Input() checked: boolean = false;
+  @Input() checked = false;
   @Input() value: any;
   @Input() id: string = 'daff-radio-' + daffRadioCount;
-  disabled: boolean = false;
-  focused: boolean = false;
+  disabled = false;
+  focused = false;
 
-  name: string = 'nolan';
+  name = 'nolan';
 
   constructor() {
     daffRadioCount++;
@@ -33,7 +33,14 @@ export class DaffRadioComponent implements ControlValueAccessor {
 
   onChange: () => {};
   onTouched: () => {};
-
+  
+  @HostBinding('attr.role') role = 'radio';
+  @HostBinding('class.focused') get focusClass() {
+    return this.focused === true;
+  };
+  @HostBinding('class.disabled') get disabledClass() {
+    return this.disabled === true;
+  };
   onInputFocus() {
     this.focused = true;
   }
@@ -52,12 +59,6 @@ export class DaffRadioComponent implements ControlValueAccessor {
   setDisabledState?(isDisabled: boolean): void {
     this.disabled = isDisabled
   }
-  @HostBinding('attr.role') role = 'radio';
-  @HostBinding('class.focused') get focusClass() {
-    return this.focused == true;
-  };
-  @HostBinding('class.disabled') get disabledClass() {
-    return this.disabled == true;
-  };
+
 
 }
