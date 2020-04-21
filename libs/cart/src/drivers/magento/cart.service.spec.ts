@@ -21,7 +21,7 @@ import { MagentoGetCartResponse } from './models/responses/get-cart';
 import { MagentoCartItem } from './models/outputs/cart-item';
 import { DaffCartItem } from '../../models/cart-item';
 
-describe('Driver | Magento | Cart | CartService', () => {
+xdescribe('Driver | Magento | Cart | CartService', () => {
   let service: DaffMagentoCartService;
   let controller: ApolloTestingController;
 
