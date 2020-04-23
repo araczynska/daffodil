@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Injector, ComponentFactoryResolver, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { createCustomElement } from '@angular/elements';
+
+import { ArticleHeadingsComponent, ARTICLE_EXAMPLES } from './examples/public_api';
 
 @Component({
   selector: 'design-land-article',
