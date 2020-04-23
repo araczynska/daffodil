@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostBinding, ElementRef, ViewChild, ContentChild, Input } from '@angular/core';
 
 @Component({
   selector: 'daff-radio-set',
   templateUrl: './radioset.component.html',
   styleUrls: ['./radioset.component.scss']
 })
-export class DaffRadiosetComponent implements OnInit {
+export class DaffRadioSetComponent {
+
+  @Input() name: string;
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  @HostBinding('attr.role') role = 'radiogroup';
 
 }

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DaffRadiosetComponent } from './radioset.component';
+import { DaffRadioSetComponent } from './radioset.component';
 
-describe('DaffRadiosetComponent', () => {
-  let component: DaffRadiosetComponent;
-  let fixture: ComponentFixture<DaffRadiosetComponent>;
+describe('DaffRadioSetComponent', () => {
+  let component: DaffRadioSetComponent;
+  let fixture: ComponentFixture<DaffRadioSetComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DaffRadiosetComponent ]
+      declarations: [ DaffRadioSetComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DaffRadiosetComponent);
+    fixture = TestBed.createComponent(DaffRadioSetComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

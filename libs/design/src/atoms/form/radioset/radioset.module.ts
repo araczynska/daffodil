@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DaffRadiosetComponent } from './radioset.component';
+import { DaffRadioSetComponent } from './radioset.component';
 
 
 
 @NgModule({
   exports: [
-    DaffRadiosetComponent
+    DaffRadioSetComponent
   ],
   declarations: [
-    DaffRadiosetComponent
+    DaffRadioSetComponent
   ],
   imports: [
     CommonModule
   ]
 })
-export class DaffRadiosetModule { }
+export class DaffRadioSetModule { }

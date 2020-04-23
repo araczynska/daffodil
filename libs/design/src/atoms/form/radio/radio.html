@@ -4,8 +4,8 @@
 [attr.value]="value"
 [attr.disabled] = "disabled ? '' : null" 
 (change)="onChange()"
-(blur)="onInputBlur()"
-(focus)="onInputFocus()"/>
+(blur)="onBlur()"
+(focus)="onFocus()"/>
 <label [attr.for]="id">
   <ng-content></ng-content>
 </label>

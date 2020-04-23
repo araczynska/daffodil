@@ -1,7 +1,8 @@
-import { Component, OnInit, Input, ElementRef, Renderer2, HostBinding, ViewEncapsulation, ChangeDetectionStrategy, HostListener, forwardRef, ViewChild } from '@angular/core';
+import { Component, OnInit, Input, ElementRef, Renderer2, HostBinding, ViewEncapsulation, ChangeDetectionStrategy, HostListener, forwardRef, ViewChild, Optional } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { DaffRadioSetComponent } from '../radioset/public_api';
 
-let daffRadioCount = 0;
+let radioUniqueId = 0;
 @Component({
   // tslint:disable-next-line: component-selector
   selector: 'daff-radio',
@@ -17,23 +18,25 @@ let daffRadioCount = 0;
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 
-export class DaffRadioComponent implements ControlValueAccessor {
+export class DaffRadioComponent implements ControlValueAccessor, OnInit {
 
   @Input() checked = false;
   @Input() value: any;
-  @Input() id: string = 'daff-radio-' + daffRadioCount;
+  @Input() id: string = 'daff-radio-' + radioUniqueId;
+  @Input() name: string;
   disabled = false;
   focused = false;
 
-  name = 'nolan';
-
-  constructor() {
-    daffRadioCount++;
+  constructor(@Optional() private radioset: DaffRadioSetComponent) {
+    radioUniqueId++;
+  }
+  ngOnInit() {
+    this.name = this.radioset ? this.radioset.name : this.name
   }
 
   onChange: () => {};
   onTouched: () => {};
-  
+
   @HostBinding('attr.role') role = 'radio';
   @HostBinding('class.focused') get focusClass() {
     return this.focused === true;
@@ -41,10 +44,10 @@ export class DaffRadioComponent implements ControlValueAccessor {
   @HostBinding('class.disabled') get disabledClass() {
     return this.disabled === true;
   };
-  onInputFocus() {
+  onFocus() {
     this.focused = true;
   }
-  onInputBlur() {
+  onBlur() {
     this.focused = false;
   }
   writeValue(value: any): void {
@@ -59,6 +62,5 @@ export class DaffRadioComponent implements ControlValueAccessor {
   setDisabledState?(isDisabled: boolean): void {
     this.disabled = isDisabled
   }
-
 
 }

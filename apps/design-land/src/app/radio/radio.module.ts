@@ -4,7 +4,7 @@ import { RadioComponent } from './radio.component';
 import { DesignLandRadioRoutingModule } from './radio-routing.module';
 import { DaffRadioModule } from '@daffodil/design';
 import { ReactiveFormsModule } from '@angular/forms';
-import { DaffRadiosetModule } from 'libs/design/src';
+import { DaffRadioSetModule } from 'libs/design/src';
 
 
 
@@ -19,7 +19,7 @@ import { DaffRadiosetModule } from 'libs/design/src';
   imports: [
     CommonModule,
     DaffRadioModule,
-    DaffRadiosetModule,
+    DaffRadioSetModule,
     ReactiveFormsModule
   ]
 })
