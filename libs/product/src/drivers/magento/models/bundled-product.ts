@@ -14,10 +14,6 @@ export enum MagentoPriceTypeEnum {
 
 export interface MagentoBundledProduct extends MagentoProduct {
 	items: MagentoBundledProductItem[];
-	dynamic_price?: boolean;
-	dynamic_sku?: boolean;
-	dynamic_weight?: boolean;
-	ship_bundle_items?: MagentoBundleItemsEnum;
 }
 
 export interface MagentoBundledProductItem {

@@ -2,10 +2,6 @@ import gql from 'graphql-tag';
 
 export const magentoBundledProductFragment = gql`
   fragment bundledProduct on BundleProduct {
-		dynamic_price
-		dynamic_sku
-		dynamic_weight
-		ship_bundle_items
 		items {
 			option_id
 			position
