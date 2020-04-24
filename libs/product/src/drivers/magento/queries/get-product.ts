@@ -12,7 +12,7 @@ query GetAProduct($sku: String!){
 		}
 	}){
 		items {
-			...product
+			...magentoProduct
 		}
 	}
 }

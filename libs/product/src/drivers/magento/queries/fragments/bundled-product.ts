@@ -1,7 +1,7 @@
 import gql from 'graphql-tag';
 
 export const magentoBundledProductFragment = gql`
-  fragment bundledProduct on BundleProduct {
+  fragment magentoBundledProduct on BundleProduct {
 		items {
 			option_id
 			position
@@ -25,5 +25,5 @@ export const magentoBundledProductFragment = gql`
 				}
 			}
 		}
-  }
+	}
 `;
