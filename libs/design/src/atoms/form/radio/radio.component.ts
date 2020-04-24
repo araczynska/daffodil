@@ -19,6 +19,16 @@ let radioUniqueId = 0;
 })
 
 export class DaffRadioComponent implements ControlValueAccessor, OnInit {
+  onChange: () => {};
+  onTouched: () => {};
+
+  @HostBinding('attr.role') role = 'radio';
+  @HostBinding('class.focused') get focusClass() {
+    return this.focused === true;
+  };
+  @HostBinding('class.disabled') get disabledClass() {
+    return this.disabled === true;
+  };
 
   @Input() checked = false;
   @Input() value: any;
@@ -34,16 +44,6 @@ export class DaffRadioComponent implements ControlValueAccessor, OnInit {
     this.name = this.radioset ? this.radioset.name : this.name
   }
 
-  onChange: () => {};
-  onTouched: () => {};
-
-  @HostBinding('attr.role') role = 'radio';
-  @HostBinding('class.focused') get focusClass() {
-    return this.focused === true;
-  };
-  @HostBinding('class.disabled') get disabledClass() {
-    return this.disabled === true;
-  };
   onFocus() {
     this.focused = true;
   }
