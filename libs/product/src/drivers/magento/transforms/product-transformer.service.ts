@@ -25,10 +25,8 @@ export class DaffMagentoProductTransformerService {
    */
   transform(product: MagentoProduct, mediaUrl?: string): DaffProduct {
 		if(product.__typename === MagentoProductTypeEnum.BundledProduct) {
-			console.log('bundled')
 			return this.bundledProductTransformer.transform(<MagentoBundledProduct>product, mediaUrl);
 		} else {
-			console.log('simple')
 			return this.simpleProductTransformer.transform(product, mediaUrl);
 		}
   }
