@@ -2,17 +2,17 @@ import { TestBed } from '@angular/core/testing';
 
 import { MagentoProduct } from '@daffodil/product';
 
-import { MagentoProductFactory } from './product.factory';
+import { MagentoBundledProductFactory } from './bundle.factory';
 
-describe('Product | Testing | Factories | MagentoProductFactory', () => {
-  let factory: MagentoProductFactory;
+describe('Product | Testing | Factories | MagentoBundledProductFactory', () => {
+  let factory: MagentoBundledProductFactory;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [MagentoProductFactory]
+      providers: [MagentoBundledProductFactory]
     });
 
-    factory = TestBed.get(MagentoProductFactory);
+    factory = TestBed.get(MagentoBundledProductFactory);
   });
 
   it('should be created', () => {
@@ -26,7 +26,7 @@ describe('Product | Testing | Factories | MagentoProductFactory', () => {
       result = factory.create();
     });
 
-    it('should return a MagentoProduct with all required fields defined', () => {
+    it('should return a MagentoBundledProduct with all required fields defined', () => {
 			expect(result.__typename).toBeDefined();
       expect(result.id).toBeDefined();
       expect(result.image.label).toBeDefined();
