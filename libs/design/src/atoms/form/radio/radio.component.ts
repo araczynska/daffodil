@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, ElementRef, Renderer2, HostBinding, ViewEncapsulation, ChangeDetectionStrategy, HostListener, forwardRef, ViewChild, Optional } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { DaffRadioSetComponent } from '../radioset/public_api';
+import { DaffRadioSetComponent } from '../radio-set/radio-set.component';
 
 let radioUniqueId = 0;
 @Component({

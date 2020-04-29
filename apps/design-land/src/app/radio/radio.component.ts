@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
@@ -6,16 +6,10 @@ import { FormGroup, FormControl } from '@angular/forms';
   templateUrl: './radio.component.html',
   styleUrls: ['./radio.component.scss']
 })
-export class RadioComponent implements OnInit {
+export class RadioComponent {
 
   radioGroup = new FormGroup({
     race: new FormControl('Terran')
   });
-
-  constructor() { }
-
-  ngOnInit() {
-    
-  }
 
 }

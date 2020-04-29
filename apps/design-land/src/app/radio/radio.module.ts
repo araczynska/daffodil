@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
+
+import { DaffRadioModule } from '@daffodil/design';
+
 import { RadioComponent } from './radio.component';
 import { DesignLandRadioRoutingModule } from './radio-routing.module';
-import { DaffRadioModule, DaffRadioSetModule } from '@daffodil/design';
-import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -18,7 +20,6 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     DaffRadioModule,
-    DaffRadioSetModule,
     ReactiveFormsModule
   ]
 })
