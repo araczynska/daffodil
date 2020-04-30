@@ -9,5 +9,5 @@ export class DaffCheckboxSetComponent {
 
   @Input() name: string;
 
-  @HostBinding('attr.role') role = 'checkbox-group';
+  @HostBinding('attr.role') role = 'group';
 }
