@@ -18,16 +18,19 @@ let checkboxIdNum = 0;
 })
 export class DaffCheckboxComponent implements ControlValueAccessor {
   @Input() value: any;
-  @Input() checked: boolean = false;
+  @Input() checked = false;
   @Input() id: string = 'daff-checkbox-' + checkboxIdNum;
   focused: boolean;
   disabled: boolean;
+  
+  @HostBinding('attr.role') role = 'checkbox';
+
 
   onChange: () => {};
   onTouched: () => {};
 
   writeValue(value: any): void {
-    this.checked = (value == 'true' || value == 'checked' ? true : false)
+    this.checked = (value === 'true' || value === 'checked' ? true : false)
   }
   registerOnChange(fn: any): void {
     this.onChange = fn;
@@ -38,7 +41,6 @@ export class DaffCheckboxComponent implements ControlValueAccessor {
   setDisabledState?(isDisabled: boolean): void {
     this.disabled = isDisabled;
   }
-  @HostBinding('attr.role') role = 'checkbox';
   @HostBinding('class.focused') get focusClass() {
     return this.focused === true;
   };
